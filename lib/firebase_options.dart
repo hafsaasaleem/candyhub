@@ -34,40 +34,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCOx6U95tVKzP8nbZMaJPyiEJKf37RdfU8',
-    appId: '1:812275202272:web:7519acb90c8dd9169cb885',
-    messagingSenderId: '812275202272',
-    projectId: 'towermarket-77c5a',
-    authDomain: 'towermarket-77c5a.firebaseapp.com',
-    storageBucket: 'towermarket-77c5a.appspot.com',
-    measurementId: 'G-C6GNTCWXZK',
+    apiKey: 'AIzaSyBq_CDuG_QvN2XtLkepZz2y_HV0jvwfwcs',
+    appId: '1:256489545026:web:8de09ad06cc6818b55bcdb',
+    messagingSenderId: '256489545026',
+    projectId: 'todos-1f195',
+    authDomain: 'todos-1f195.firebaseapp.com',
+    storageBucket: 'todos-1f195.appspot.com',
+    measurementId: 'G-PWG1YMN15D',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCndrCfzhMdCFIDDkrroKlB8Zk6WoulqPo',
-    appId: '1:812275202272:android:90b262e1db5a1c379cb885',
-    messagingSenderId: '812275202272',
-    projectId: 'towermarket-77c5a',
-    storageBucket: 'towermarket-77c5a.appspot.com',
+    apiKey: 'AIzaSyDEwEMWA_YBUiI4WL1oQCOYOstYGXMZPyw',
+    appId: '1:256489545026:android:ce50213329cbbc1e55bcdb',
+    messagingSenderId: '256489545026',
+    projectId: 'todos-1f195',
+    storageBucket: 'todos-1f195.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCmA05sYgH1dU3sBZ2GjtNdkA_dfitQDN0',
-    appId: '1:812275202272:ios:aa7f7b31d8eb40c69cb885',
-    messagingSenderId: '812275202272',
-    projectId: 'towermarket-77c5a',
-    storageBucket: 'towermarket-77c5a.appspot.com',
-    iosClientId: '812275202272-6ile6k3imivcfskkpq6h9rgl6n1g0f7r.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAF4S3siE6K4oDKqfdA9X-gjItiQpUoBTg',
+    appId: '1:256489545026:ios:774c34d57a6873e955bcdb',
+    messagingSenderId: '256489545026',
+    projectId: 'todos-1f195',
+    storageBucket: 'todos-1f195.appspot.com',
+    iosClientId: '256489545026-dctaqer5hdkmsg0mr4p4f016l4t5oeip.apps.googleusercontent.com',
     iosBundleId: 'com.example.towermarket',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCmA05sYgH1dU3sBZ2GjtNdkA_dfitQDN0',
-    appId: '1:812275202272:ios:aa7f7b31d8eb40c69cb885',
-    messagingSenderId: '812275202272',
-    projectId: 'towermarket-77c5a',
-    storageBucket: 'towermarket-77c5a.appspot.com',
-    iosClientId: '812275202272-6ile6k3imivcfskkpq6h9rgl6n1g0f7r.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAF4S3siE6K4oDKqfdA9X-gjItiQpUoBTg',
+    appId: '1:256489545026:ios:774c34d57a6873e955bcdb',
+    messagingSenderId: '256489545026',
+    projectId: 'todos-1f195',
+    storageBucket: 'todos-1f195.appspot.com',
+    iosClientId: '256489545026-dctaqer5hdkmsg0mr4p4f016l4t5oeip.apps.googleusercontent.com',
     iosBundleId: 'com.example.towermarket',
   );
 }

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:towermarket/create_inventry_screen.dart';
-import 'package:towermarket/login_screen.dart';
-import 'package:towermarket/splash_screen.dart';
+import 'package:towermarket/view/home_screen.dart';
+import 'package:towermarket/view/login_screen.dart';
+import 'package:towermarket/view/splash_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class App extends StatelessWidget {
             case ConnectionState.active:
             case ConnectionState.done:
               if (snaps.data != null) {
-                return const CreateInventryScreen();
+                return const HomeScreen();
               } else {
                 return const LoginScreen();
               }

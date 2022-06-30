@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:towermarket/view/create_inventry_screen.dart';
 
+import 'orders_screen.dart';
 import 'product_screen.dart';
 import 'show_inventry_screen.dart';
 
@@ -60,9 +61,9 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: Card(
                       child: TextButton(
-                        child: const Text("Empty"),
+                        child: const Text("Orders"),
                         onPressed: () {
-                          Navigator.push(context, ShowInventryScreen.route());
+                          Navigator.push(context, OrdersScreen.route());
                         },
                       ),
                     ),

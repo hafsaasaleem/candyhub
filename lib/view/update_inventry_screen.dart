@@ -6,7 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:towermarket/view/show_inventry_screen.dart';
+import 'package:towermarket/models/product.dart';
 
 class UpdateInventryScreen extends StatefulWidget {
   const UpdateInventryScreen({Key? key}) : super(key: key);
@@ -201,8 +201,8 @@ class _UpdateInventryScreenState extends State<UpdateInventryScreen> {
 
   Future<String> uploadFile() async {
     final path =
-        'productsImages/${image!.absolute.path.substring(image!.absolute.path.lastIndexOf('/'), image!.absolute.path.length)}';
-    final file = image;
+        'productsImages/${image?.absolute.path.substring(image!.absolute.path.lastIndexOf('/'), image!.absolute.path.length)}';
+    final File? file = image;
     final storageRef = FirebaseStorage.instance.ref();
     await storageRef.child(path).putFile(file!);
 

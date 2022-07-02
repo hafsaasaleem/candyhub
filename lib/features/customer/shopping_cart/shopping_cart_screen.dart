@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:towermarket/features/customer/place_order/place_order_screen.dart';
 import 'package:towermarket/local_storage/item.dart';
 import 'package:towermarket/models/product.dart';
-import 'package:towermarket/view/place_order_screen.dart';
 
 class ShoppingCartScreen extends StatelessWidget {
   static Route route() {

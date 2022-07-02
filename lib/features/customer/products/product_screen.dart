@@ -1,9 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:towermarket/features/customer/shopping_cart/shopping_cart_screen.dart';
 import 'package:towermarket/local_storage/item.dart';
 import 'package:towermarket/models/product.dart';
-import 'package:towermarket/view/shopping_cart_screen.dart';
 
 class ProductScreen extends StatefulWidget {
   static route() {
@@ -59,10 +60,15 @@ class ProductScreenState extends State<ProductScreen> {
                       Expanded(
                         flex: 2,
                         child: ClipRRect(
-                            child: Image.network(
-                          product!.imageUrl,
-                          fit: BoxFit.cover,
-                        )),
+                          child: CachedNetworkImage(
+                            imageUrl: product!.imageUrl,
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) =>
+                                const CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                          ),
+                        ),
                       ),
                       Expanded(
                         child: Row(
@@ -80,8 +86,9 @@ class ProductScreenState extends State<ProductScreen> {
                             ),
                             TextButton(
                                 onPressed: () {
-                                  Hive.box<Item>('shoppingcart').put(product.reference, Item(
-                                    product: product.toMap()));
+                                  Hive.box<Item>('shoppingcart').put(
+                                      product.reference,
+                                      Item(product: product.toMap()));
                                 },
                                 child: const Text("add"))
                           ],

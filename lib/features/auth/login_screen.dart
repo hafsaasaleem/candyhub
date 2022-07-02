@@ -4,6 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
+  static Route route() {
+    return MaterialPageRoute(builder: (_) => const LoginScreen());
+  }
+
   const LoginScreen({Key? key}) : super(key: key);
 
   @override

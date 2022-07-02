@@ -1,27 +1,9 @@
 [
     {
         "type": "Features",
-        "title": "Order Punch",
-        "desc": "Order Punching and also Inventry Minus"
-    },
-    {
-        "type": "Features",
-        "title": "Generate PDF bill",
-        "desc": "PDF bill with proper details also Print options and Save option"
-    },
-    {
-        "type": "Bug",
-        "title": "upload images",
-        "desc": "upload Images To Storage takes too long"
-    },
-    {
-        "type": "Bug",
-        "title": "download images",
-        "desc": "downloadUrl of Images takes too long"
-    },
-    {
-        "type": "Bug",
-        "title": "Inventry isn't update",
-        "desc": "Inventry is not update without image uploading"
+        "title": "SELECT CUSTOMER OR PROVIDER",
+        "solution": null,
+        "desc": null,
+        "deadline": "7/1/2022"
     }
 ]

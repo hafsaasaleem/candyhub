@@ -81,13 +81,15 @@ class Order extends Equatable {
     );
   }
 
-  factory Order.fromSnapshot(DocumentSnapshot documentSnapshot) {
-    final String reference = documentSnapshot.reference.id;
+  factory Order.fromSnapshot(DocumentSnapshot? documentSnapshot) {
+    final String reference = documentSnapshot!.reference.id;
     final map = documentSnapshot.data() as Map<String, dynamic>;
     return Order(
       reference: reference,
-      createdAt: DateTime.fromMillisecondsSinceEpoch(map['createdAt']),
-      updatedAt: DateTime.fromMillisecondsSinceEpoch(map['updatedAt']),
+      createdAt: DateTime.fromMillisecondsSinceEpoch(
+          map['createdAt'] ?? DateTime.now()),
+      updatedAt: DateTime.fromMillisecondsSinceEpoch(
+          map['updatedAt'] ?? DateTime.now()),
       address: map['address'] ?? '',
       total: map['total']?.toInt() ?? 0,
       totalItems: map['totalItems']?.toInt() ?? 0,

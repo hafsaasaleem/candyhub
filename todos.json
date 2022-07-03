@@ -1,9 +1,51 @@
 [
     {
-        "type": "Features",
-        "title": "SELECT CUSTOMER OR PROVIDER",
-        "solution": null,
-        "desc": null,
-        "deadline": "7/1/2022"
+        "Sprint": "Shopping Cart Alert Dialog",
+        "Descriptions": "Show dialog when any Item add on Cart on the ottom",
+        "Solution": [],
+        "Deadline": "7/3/2022",
+        "To-dos": []
+    },
+    {
+        "Sprint": "Place Order Features",
+        "Descriptions": "",
+        "Solution": [],
+        "Deadline": "",
+        "To-dos": []
+    },
+    {
+        "Sprint": "Dashboard",
+        "Descriptions": "",
+        "Solution": [],
+        "Deadline": "",
+        "To-dos": []
+    },
+    {
+        "Sprint": "Provider Recieved Notifications When Order Place",
+        "Descriptions": "",
+        "Solution": [],
+        "Deadline": "",
+        "To-dos": []
+    },
+    {
+        "Sprint": "Login Provider Account details & Logout Option",
+        "Descriptions": "",
+        "Solution": [],
+        "Deadline": "",
+        "To-dos": []
+    },
+    {
+        "Sprint": "Invoice Layout, Design",
+        "Descriptions": "",
+        "Solution": [],
+        "Deadline": "",
+        "To-dos": []
+    },
+    {
+        "Sprint": "Inventry minus, When Order Punch",
+        "Descriptions": "",
+        "Solution": [],
+        "Deadline": "",
+        "To-dos": []
     }
 ]

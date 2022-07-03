@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:towermarket/local_storage/item.dart';
 import 'package:towermarket/models/order.dart';
 import 'package:towermarket/models/product.dart';
+import 'package:towermarket/models/shopping_cart.dart';
 
 class PlaceOrderScreen extends StatefulWidget {
   static Route route() {
@@ -47,14 +47,15 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: ValueListenableBuilder<Box<Item>>(
-                valueListenable: Hive.box<Item>('shoppingcart').listenable(),
+              child: ValueListenableBuilder<Box<ShoppingCart>>(
+                valueListenable:
+                    Hive.box<ShoppingCart>('shoppingcart').listenable(),
                 builder: (_, box, widget) {
-                  products = box.values
-                      .toList()
-                      .cast<Item>()
-                      .map((e) => Product.fromMap(e.product))
-                      .toList();
+                  // products = box.values
+                  //     .toList()
+                  //     .cast<ShoppingCart>()
+                  //     .map((e) => e)
+                  //     .toList();
 
                   for (var item in products) {
                     totalAmount += item.price;
@@ -88,7 +89,6 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
                 },
               ),
             ),
-            
             ElevatedButton(
               onPressed: () async {
                 Navigator.pop(context);

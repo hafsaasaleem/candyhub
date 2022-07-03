@@ -1,11 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:towermarket/features/auth/login_screen.dart';
-import 'package:towermarket/features/provider/home/home_screen.dart';
-import 'package:towermarket/features/select_user_type_screen.dart';
-
+import 'package:towermarket/features/customer/products/view/product_screen.dart';
 import 'towermarket_theme.dart';
-import 'features/splash_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -20,13 +17,14 @@ class App extends StatelessWidget {
           switch (snaps.connectionState) {
             case ConnectionState.none:
             case ConnectionState.waiting:
-              return const SplashScreen();
+              return const Scaffold(
+                  body: Center(child: CircularProgressIndicator()));
             case ConnectionState.active:
             case ConnectionState.done:
               if (snaps.data != null) {
-                return const HomeScreen();
+                return const ProductScreen();
               } else {
-                return const SelectUserTypeScreen();
+                return const LoginScreen();
               }
             default:
               return const LoginScreen();

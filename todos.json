@@ -1,51 +1,58 @@
 [
     {
-        "Sprint": "Shopping Cart Alert Dialog",
-        "Descriptions": "Show dialog when any Item add on Cart on the ottom",
-        "Solution": [],
-        "Deadline": "7/3/2022",
-        "To-dos": []
-    },
-    {
-        "Sprint": "Place Order Features",
+        "Sprint": "Both apps Convert to Bloc Pattern",
         "Descriptions": "",
         "Solution": [],
-        "Deadline": "",
-        "To-dos": []
-    },
-    {
-        "Sprint": "Dashboard",
-        "Descriptions": "",
-        "Solution": [],
-        "Deadline": "",
-        "To-dos": []
-    },
-    {
-        "Sprint": "Provider Recieved Notifications When Order Place",
-        "Descriptions": "",
-        "Solution": [],
-        "Deadline": "",
-        "To-dos": []
-    },
-    {
-        "Sprint": "Login Provider Account details & Logout Option",
-        "Descriptions": "",
-        "Solution": [],
-        "Deadline": "",
-        "To-dos": []
+        "To-dos": [],
+        "Deadline": ""
     },
     {
         "Sprint": "Invoice Layout, Design",
         "Descriptions": "",
         "Solution": [],
-        "Deadline": "",
-        "To-dos": []
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Provider Recieved Notifications When Order Place",
+        "Descriptions": "",
+        "Solution": [],
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Order Punch dialog",
+        "Descriptions": "",
+        "Solution": [],
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Make Customer app seprate from Provider",
+        "Descriptions": "",
+        "Solution": [],
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Dashboard",
+        "Descriptions": "",
+        "Solution": [],
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Login Provider Account details & Logout Option",
+        "Descriptions": "",
+        "Solution": [],
+        "To-dos": [],
+        "Deadline": ""
     },
     {
         "Sprint": "Inventry minus, When Order Punch",
         "Descriptions": "",
         "Solution": [],
-        "Deadline": "",
-        "To-dos": []
+        "To-dos": [],
+        "Deadline": ""
     }
 ]

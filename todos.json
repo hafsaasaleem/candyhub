@@ -1,14 +1,28 @@
 [
     {
-        "Sprint": "Both apps Convert to Bloc Pattern",
+        "Sprint": "Refactors All customer app Codes",
         "Descriptions": "",
         "Solution": [],
         "To-dos": [],
         "Deadline": ""
     },
     {
-        "Sprint": "Invoice Layout, Design",
+        "Sprint": "Products Home Screen",
+        "Descriptions": "Make home screen as BottomNavigationBar with Screen to Screen Navigator",
+        "Solution": ["NavigationBar", "Home", "Category", "Account", "Just Like Blinkit OR airlist"],
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Products Categories",
         "Descriptions": "",
+        "Solution": [],
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Products Options",
+        "Descriptions": "Show bottomModal for Products selects Options",
         "Solution": [],
         "To-dos": [],
         "Deadline": ""
@@ -22,6 +36,13 @@
     },
     {
         "Sprint": "Order Punch dialog",
+        "Descriptions": "",
+        "Solution": [],
+        "To-dos": [],
+        "Deadline": ""
+    },
+    {
+        "Sprint": "Invoice Layout, Design",
         "Descriptions": "",
         "Solution": [],
         "To-dos": [],

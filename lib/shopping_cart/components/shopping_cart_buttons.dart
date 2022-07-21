@@ -32,12 +32,12 @@ class ShoppingCartButtons extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(6.0),
                 decoration: const BoxDecoration(
-                  color: TowermarketColors.peru,
+                  color: TowermarketColors.black,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
                   Icons.remove,
-                  size: 16,
+                  size: 12,
                   color: TowermarketColors.white,
                 ),
               ),
@@ -58,12 +58,12 @@ class ShoppingCartButtons extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(6.0),
                 decoration: const BoxDecoration(
-                  color: TowermarketColors.peru,
+                  color: TowermarketColors.black,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
                   Icons.add,
-                  size: 16,
+                  size: 12,
                   color: TowermarketColors.white,
                 ),
               ),

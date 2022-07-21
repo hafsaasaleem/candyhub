@@ -18,6 +18,12 @@ abstract class TowermarketTextStyle {
     );
   }
 
+  static TextStyle get title1 {
+    return _baseStyle.copyWith(
+      fontSize: 18,
+    );
+  }
+
   static TextStyle get title2 {
     return _baseStyle.copyWith();
   }
@@ -31,6 +37,12 @@ abstract class TowermarketTextStyle {
   static TextStyle get title4 {
     return _baseStyle.copyWith(
       fontSize: 13.5,
+    );
+  }
+
+  static TextStyle get title5 {
+    return _baseStyle.copyWith(
+      fontSize: 12.5,
     );
   }
 }

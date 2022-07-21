@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:towermarket/colors/towermarket_colors.dart';
-import 'package:towermarket/features/customer/products/components/product_list.dart';
-import 'package:towermarket/features/customer/products/components/shopping_cart_dialog.dart';
 import 'package:towermarket/models/product.dart';
+
+import '../components/product_list.dart';
+import '../components/shopping_cart_dialog.dart';
 
 class ProductScreen extends StatelessWidget {
   static Route route() {

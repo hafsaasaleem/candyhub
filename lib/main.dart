@@ -7,6 +7,7 @@ import 'models/shopping_cart.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
+  
   Hive.registerAdapter((ShoppingCartAdapter()));
   await Hive.openBox<ShoppingCart>('shoppingcart');
 

@@ -36,25 +36,35 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("SIGN IN")),
-      body: Column(
-        children: [
-          TextField(controller: _email),
-          TextField(controller: _password),
-          ElevatedButton(
-            onPressed: () {
-              _login(_email.text, _password.text);
-            },
-            child: const Text("SIGN IN"),
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        child: Column(
+          children: [
+            TextField(
+              controller: _email,
+              decoration: const InputDecoration(hintText: "email"),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: _password,
+              decoration: const InputDecoration(hintText: "password"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _login();
+              },
+              child: const Text("SIGN IN"),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Future<void> _login([String email = '', String password = '']) async {
+  Future<void> _login() async {
     try {
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _email.text, password: _password.text);
     } catch (e) {
       log("Error: $e");
     }

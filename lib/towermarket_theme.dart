@@ -8,13 +8,14 @@ class TowermarketTheme {
     return ThemeData(
       scaffoldBackgroundColor: TowermarketColors.white,
       appBarTheme: AppBarTheme(
+          backgroundColor: TowermarketColors.white,
           titleTextStyle: TowermarketTextStyle.heading4,
           iconTheme: const IconThemeData(color: TowermarketColors.black)),
-      inputDecorationTheme: _inputDecvvvorationTheme(),
+      inputDecorationTheme: _inputDecorationTheme,
       indicatorColor: TowermarketColors.white,
-      colorScheme: const ColorScheme.light(primary: TowermarketColors.white),
-      primaryColor: TowermarketColors.brick,
-      primaryColorLight: TowermarketColors.brick,
+      // colorScheme: const ColorScheme.light(primary: TowermarketColors.white),
+      primaryColor: TowermarketColors.peru,
+      primaryColorLight: TowermarketColors.peru,
       tabBarTheme: const TabBarTheme(indicatorSize: TabBarIndicatorSize.tab),
       navigationBarTheme: const NavigationBarThemeData(
         indicatorColor: Colors.transparent,
@@ -24,15 +25,16 @@ class TowermarketTheme {
         size: 24.0,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: TowermarketColors.brick,
+        backgroundColor: TowermarketColors.peru,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(primary: TowermarketColors.brick)),
+          style: ElevatedButton.styleFrom(primary: TowermarketColors.peru)),
     );
   }
 
-  static InputDecorationTheme _inputDecvvvorationTheme() =>
+  static InputDecorationTheme get _inputDecorationTheme =>
       const InputDecorationTheme(
+        contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
         enabledBorder: OutlineInputBorder(),
         focusedBorder: OutlineInputBorder(),
       );

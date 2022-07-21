@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:towermarket/colors/towermarket_colors.dart';
-import 'package:towermarket/features/customer/shopping_cart/shopping_cart_screen.dart';
 import 'package:towermarket/models/shopping_cart.dart';
+import 'package:towermarket/shopping_cart/shopping_cart_screen.dart';
 import 'package:towermarket/typography/towermarket_text_style.dart';
 
 class ShoppingCartDialog extends StatelessWidget {

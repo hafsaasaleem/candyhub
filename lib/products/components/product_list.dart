@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/features/customer/products/components/product_card.dart';
 import 'package:towermarket/models/product.dart';
+
+import 'product_card.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList({
@@ -12,15 +13,14 @@ class ProductList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.only(bottom: 90),
+    return ListView.separated(
       itemCount: products.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 10 / 11,
-      ),
+      padding: const EdgeInsets.only(top: 8.0, bottom: 72, right: 12, left: 12),
       itemBuilder: (context, index) {
         return ProductCard(product: products[index]);
+      },
+      separatorBuilder: (context, index) {
+        return Container(color: Colors.black12, height: 0.5);
       },
     );
   }

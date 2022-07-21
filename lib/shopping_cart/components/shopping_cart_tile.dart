@@ -21,7 +21,7 @@ class ShoppingCartTile extends StatelessWidget {
         padding: const EdgeInsets.all(4.0),
         decoration: BoxDecoration(
           border: Border.all(
-            color: TowermarketColors.brick,
+            color: TowermarketColors.peru,
             width: 0.5,
             style: BorderStyle.solid,
           ),

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:towermarket/colors/towermarket_colors.dart';
 import 'package:towermarket/models/product.dart';
 import 'package:towermarket/typography/towermarket_text_style.dart';
 
@@ -43,16 +44,14 @@ class ProductCard extends StatelessWidget {
                     product.brand,
                     style: TowermarketTextStyle.title5,
                   ),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 2),
                   Text(
                     "${product.quantity} ${product.symbol}",
                     style: TowermarketTextStyle.title5,
                   ),
-                  const SizedBox(height: 6),
-                  Text(
-                    "PKR ${product.price}",
-                    style: TowermarketTextStyle.title1,
-                  ),
+                  const SizedBox(height: 8),
+                  Text("PKR ${product.price}",
+                      style: TowermarketTextStyle.title2),
                 ],
               ),
             ),

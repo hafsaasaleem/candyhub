@@ -28,7 +28,7 @@ class TowermarketTheme {
         backgroundColor: TowermarketColors.peru,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(primary: TowermarketColors.peru)),
+          style: ElevatedButton.styleFrom(primary: TowermarketColors.brick)),
     );
   }
 

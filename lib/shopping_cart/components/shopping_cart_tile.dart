@@ -21,7 +21,7 @@ class ShoppingCartTile extends StatelessWidget {
         padding: const EdgeInsets.all(4.0),
         decoration: BoxDecoration(
           border: Border.all(
-            color: TowermarketColors.peru,
+            color: TowermarketColors.black,
             width: 0.5,
             style: BorderStyle.solid,
           ),
@@ -43,8 +43,21 @@ class ShoppingCartTile extends StatelessWidget {
           ),
         ),
       ),
-      title: Text(cart.title, style: TowermarketTextStyle.title2),
-      subtitle: Text("PKR ${cart.price}", style: TowermarketTextStyle.title4),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(cart.title, style: TowermarketTextStyle.title3),
+          Text("${cart.quantity} ${cart.symbol}",
+              style: TowermarketTextStyle.title5),
+          const SizedBox(height: 4),
+        ],
+      ),
+      subtitle: Text("PKR ${cart.price}",
+          style: TowermarketTextStyle.title5.copyWith(
+            backgroundColor: TowermarketColors.black,
+            color: TowermarketColors.white,
+            fontWeight: FontWeight.w600,
+          )),
       trailing: ShoppingCartButtons(cart: cart),
     );
   }

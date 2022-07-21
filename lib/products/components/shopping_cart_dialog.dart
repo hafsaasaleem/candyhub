@@ -29,7 +29,7 @@ class ShoppingCartDialog extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
             decoration: BoxDecoration(
-                color: TowermarketColors.peru,
+                color: TowermarketColors.brick,
                 borderRadius: BorderRadius.circular(4.0)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

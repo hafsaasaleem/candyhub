@@ -22,10 +22,13 @@ class ProductCard extends StatelessWidget {
           children: [
             Expanded(
               flex: 4,
-              child: ClipRRect(
-                child: CachedNetworkImage(
-                  imageUrl: product.imageUrl,
-                  fit: BoxFit.contain,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ClipRRect(
+                  child: CachedNetworkImage(
+                    imageUrl: product.imageUrl,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),

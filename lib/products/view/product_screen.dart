@@ -1,61 +1,50 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:towermarket/colors/towermarket_colors.dart';
-import 'package:towermarket/models/product.dart';
-
+import 'package:towermarket/products/components/category_list.dart';
+import 'package:towermarket/products/components/shopping_cart_dialog.dart';
+import 'package:towermarket/typography/towermarket_text_style.dart';
 import '../components/product_list.dart';
-import '../components/shopping_cart_dialog.dart';
 
-class ProductScreen extends StatelessWidget {
-  static Route route() {
-    return MaterialPageRoute(builder: (_) => const ProductScreen());
-  }
-
+class ProductScreen extends StatefulWidget {
   const ProductScreen({Key? key}) : super(key: key);
 
   @override
+  State<ProductScreen> createState() => _ProductScreenState();
+}
+
+class _ProductScreenState extends State<ProductScreen> {
+  ValueNotifier<String> selectedCategoryKey = ValueNotifier("biscuit");
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: TowermarketColors.white,
-      child: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text("Products"),
+    return Scaffold(
+      backgroundColor: TowermarketColors.white,
+      appBar: AppBar(
+        titleTextStyle: TowermarketTextStyle.heading4
+            .copyWith(color: TowermarketColors.white),
+        backgroundColor: TowermarketColors.brick,
+        title: const Text("Products"),
+      ),
+      body: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              CategoryList(
+                onChanged: (value) {
+                  selectedCategoryKey.value = value;
+                },
+              ),
+              ValueListenableBuilder<String>(
+                valueListenable: selectedCategoryKey,
+                builder: (context, state, widget) {
+                  return ProductList(categoryKey: state);
+                },
+              ),
+            ],
           ),
-          body: StreamBuilder<List<Product>>(
-            stream: FirebaseFirestore.instance
-                .collection('products')
-                .snapshots()
-                .map((QuerySnapshot<Map<String, dynamic>> querySnapshot) {
-              return querySnapshot.docs.map(
-                  (QueryDocumentSnapshot<Map<String, dynamic>>
-                      queryDocumentSnapshot) {
-                return Product.fromSnapshot(queryDocumentSnapshot);
-              }).toList();
-            }),
-            builder: (_, AsyncSnapshot<List<Product>> snapshot) {
-              switch (snapshot.connectionState) {
-                case ConnectionState.none:
-                case ConnectionState.waiting:
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                case ConnectionState.active:
-                case ConnectionState.done:
-                  return Stack(
-                    children: [
-                      ProductList(products: snapshot.data!),
-                      const ShoppingCartDialog(),
-                    ],
-                  );
-                default:
-                  return const Center(
-                    child: Text("Something went wrong"),
-                  );
-              }
-            },
-          ),
-        ),
+          const ShoppingCartDialog(),
+        ],
       ),
     );
   }

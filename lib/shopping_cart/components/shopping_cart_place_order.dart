@@ -1,8 +1,8 @@
-
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:towermarket/colors/towermarket_colors.dart';
 import 'package:towermarket/models/order.dart';
 import 'package:towermarket/models/shopping_cart.dart';
 import '../../utilities/order_place_dialog.dart';
@@ -18,6 +18,7 @@ class ShoppingCartPlaceOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(primary: TowermarketColors.brick),
       onPressed: cart.isNotEmpty
           ? () async {
               if (await showOrderPlaceDialog(context)) {

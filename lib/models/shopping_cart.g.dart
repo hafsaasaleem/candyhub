@@ -19,32 +19,35 @@ class ShoppingCartAdapter extends TypeAdapter<ShoppingCart> {
     return ShoppingCart(
       reference: fields[0] as String?,
       brand: fields[1] as String,
-      imageUrl: fields[3] as String,
-      price: fields[5] as int,
+      imageUrl: fields[2] as String,
+      price: fields[3] as int,
+      count: fields[4] as int,
+      title: fields[5] as String,
       quantity: fields[6] as int,
       symbol: fields[7] as String,
-      title: fields[8] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, ShoppingCart obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.reference)
       ..writeByte(1)
       ..write(obj.brand)
-      ..writeByte(3)
+      ..writeByte(2)
       ..write(obj.imageUrl)
-      ..writeByte(5)
+      ..writeByte(3)
       ..write(obj.price)
+      ..writeByte(4)
+      ..write(obj.count)
+      ..writeByte(5)
+      ..write(obj.title)
       ..writeByte(6)
       ..write(obj.quantity)
       ..writeByte(7)
-      ..write(obj.symbol)
-      ..writeByte(8)
-      ..write(obj.title);
+      ..write(obj.symbol);
   }
 
   @override

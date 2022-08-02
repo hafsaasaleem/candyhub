@@ -21,36 +21,41 @@ class AddToCartButtons extends StatelessWidget {
         Hive.box<ShoppingCart>('shoppingcart').delete(cart!.reference);
       }
     }
-    return cart != null
-        ? Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircleIconButton(
-                icon: Icons.remove,
-                onTap: () {
-                  Hive.box<ShoppingCart>('shoppingcart').put(
-                      cart!.reference, cart!.copyWith(count: cart!.count - 1));
-                },
-              ),
-              const SizedBox(height: 6.0),
-              Text(
-                cart!.count < 10 ? "0${cart!.count}" : "${cart!.count}",
-                style: TowermarketTextStyle.title3,
-              ),
-              const SizedBox(height: 6.0),
-              CircleIconButton(
-                onTap: () {
-                  Hive.box<ShoppingCart>('shoppingcart').put(
-                      cart!.reference, cart!.copyWith(count: cart!.count + 1));
-                },
-              )
-            ],
-          )
-        : CircleIconButton(
+    if (cart != null) {
+      final ShoppingCart item = cart!;
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleIconButton(
+            icon: Icons.remove,
             onTap: () {
-              Hive.box<ShoppingCart>('shoppingcart').put(product.reference,
-                  ShoppingCart.fromMap(product.toMap()).copyWith(count: 1));
+              if (item.count > 0) {
+                Hive.box<ShoppingCart>('shoppingcart').put(
+                    cart!.reference, cart!.copyWith(count: cart!.count - 1));
+              }
             },
-          );
+          ),
+          const SizedBox(height: 6.0),
+          Text(
+            item.count < 10 ? "0${item.count}" : "${item.count}",
+            style: TowermarketTextStyle.title3,
+          ),
+          const SizedBox(height: 6.0),
+          CircleIconButton(
+            onTap: () {
+              Hive.box<ShoppingCart>('shoppingcart')
+                  .put(item.reference, item.copyWith(count: item.count + 1));
+            },
+          )
+        ],
+      );
+    } else {
+      return CircleIconButton(
+        onTap: () {
+          Hive.box<ShoppingCart>('shoppingcart').put(product.reference,
+              ShoppingCart.fromMap(product.toMap()).copyWith(count: 1));
+        },
+      );
+    }
   }
 }

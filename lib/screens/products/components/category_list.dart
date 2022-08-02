@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:towermarket/screens/products/components/components.dart';
+import 'package:towermarket/widgets/widgets.dart';
 import '../../../service/service.dart';
 import 'category_card.dart';
 import 'package:towermarket/utilities/utilities.dart';
@@ -17,33 +19,30 @@ class CategoryList extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Center(
-              child: Text('Something went wrong \nfrom Database',
-                  textAlign: TextAlign.center,
-                  style: TowermarketTextStyle.title1));
+              child: Text(
+            'Something went wrong \nfrom Database',
+            textAlign: TextAlign.center,
+            style: TowermarketTextStyle.title1,
+          ));
         }
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const CategoryCardSkeletonList();
           case ConnectionState.active:
           case ConnectionState.done:
             return SizedBox(
               height: 46,
-              child: ListView.separated(
+              child: ListViewSeparated(
+                separatedWidth: 18,
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
-                shrinkWrap: true,
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
                   return CategoryCard(
-                      category: snapshot.data!.elementAt(index),
-                      onChanged: onChanged,
-                      selectedCategory: selectedCategory);
-                },
-                separatorBuilder: (context, index) {
-                  return const SizedBox(width: 18);
+                    category: snapshot.data!.elementAt(index),
+                    onChanged: onChanged,
+                    selectedCategory: selectedCategory,
+                  );
                 },
               ),
             );

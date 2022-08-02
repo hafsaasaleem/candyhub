@@ -41,12 +41,10 @@ class ShoppingCartTile extends StatelessWidget {
           const SizedBox(height: 4),
         ],
       ),
-      subtitle: Text("PKR ${cart.price * cart.count}",
-          style: TowermarketTextStyle.title5.copyWith(
-            backgroundColor: TowermarketColors.black,
-            color: TowermarketColors.white,
-            fontWeight: FontWeight.w600,
-          )),
+      subtitle: Text(
+        "PKR ${cart.price * cart.count}",
+        style: TowermarketTextStyle.title3,
+      ),
       trailing: ShoppingCartButtons(cart: cart),
     );
   }

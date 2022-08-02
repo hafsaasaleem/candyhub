@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:towermarket/screens/products/components/components.dart';
 
 class CachedImage extends StatelessWidget {
   const CachedImage({
@@ -16,7 +17,7 @@ class CachedImage extends StatelessWidget {
       fit: BoxFit.cover,
       errorWidget: (context, url, error) => const Icon(Icons.error),
       progressIndicatorBuilder: (_, url, widget) {
-        return const Center(child: CircularProgressIndicator());
+        return const Center(child: ProductImageSkeleton());
       },
     );
   }

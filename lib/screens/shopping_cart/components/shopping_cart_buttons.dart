@@ -14,6 +14,9 @@ class ShoppingCartButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (cart.count < 1) {
+      Hive.box<ShoppingCart>('shoppingcart').delete(cart.reference);
+    }
     return SizedBox(
       width: 90,
       child: Row(
@@ -23,11 +26,9 @@ class ShoppingCartButtons extends StatelessWidget {
             child: CircleIconButton(
               icon: Icons.remove,
               onTap: () {
-                if (cart.count >= 1) {
+                if (cart.count > 0) {
                   Hive.box<ShoppingCart>('shoppingcart').put(
                       cart.reference, cart.copyWith(count: cart.count - 1));
-                } else {
-                  Hive.box<ShoppingCart>('shoppingcart').delete(cart.reference);
                 }
               },
             ),
@@ -42,12 +43,8 @@ class ShoppingCartButtons extends StatelessWidget {
           Expanded(
             child: CircleIconButton(
               onTap: () {
-                if (cart.count >= 1) {
-                  Hive.box<ShoppingCart>('shoppingcart').put(
-                      cart.reference, cart.copyWith(count: cart.count + 1));
-                } else {
-                  Hive.box<ShoppingCart>('shoppingcart').delete(cart.reference);
-                }
+                Hive.box<ShoppingCart>('shoppingcart')
+                    .put(cart.reference, cart.copyWith(count: cart.count + 1));
               },
             ),
           ),

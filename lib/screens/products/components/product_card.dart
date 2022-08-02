@@ -12,53 +12,60 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 11 / 3,
-      child: Row(
+      aspectRatio: 3 / 1,
+      child: Column(
         children: [
           Expanded(
-            flex: 2,
-            child: CachedImage(imageUrl: product.imageUrl),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Text(
-                  product.title,
-                  overflow: TextOverflow.ellipsis,
-                  style: TowermarketTextStyle.title3,
-                  maxLines: 2,
+                Expanded(
+                  flex: 2,
+                  child: CachedImage(imageUrl: product.imageUrl),
                 ),
-                Text(
-                  product.brand,
-                  style: TowermarketTextStyle.title5
-                      .copyWith(fontWeight: FontWeight.w600),
+                const SizedBox(width: 16),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        product.title,
+                        overflow: TextOverflow.ellipsis,
+                        style: TowermarketTextStyle.title3,
+                        maxLines: 2,
+                      ),
+                      Text(
+                        product.brand,
+                        style: TowermarketTextStyle.title5
+                            .copyWith(fontWeight: FontWeight.w600),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        "${product.quantity} ${product.symbol}",
+                        style: TowermarketTextStyle.title5,
+                      ),
+                      Text("PKR ${product.price}",
+                          style: TowermarketTextStyle.title2),
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 6),
-                Text(
-                  "${product.quantity} ${product.symbol}",
-                  style: TowermarketTextStyle.title5,
+                Expanded(
+                  child: ValueListenableBuilder<Box<ShoppingCart>>(
+                    valueListenable:
+                        Hive.box<ShoppingCart>('shoppingcart').listenable(),
+                    builder: (_, Box<ShoppingCart> state, widget) {
+                      return AddToCartButtons(
+                        cart: state.get(product.reference),
+                        product: product,
+                      );
+                    },
+                  ),
                 ),
-                Text("PKR ${product.price}",
-                    style: TowermarketTextStyle.title2),
               ],
             ),
           ),
-          Expanded(
-            child: ValueListenableBuilder<Box<ShoppingCart>>(
-              valueListenable:
-                  Hive.box<ShoppingCart>('shoppingcart').listenable(),
-              builder: (_, Box<ShoppingCart> state, widget) {
-                return AddToCartButtons(
-                  cart: state.get(product.reference),
-                  product: product,
-                );
-              },
-            ),
-          ),
+          const Divider(),
         ],
       ),
     );

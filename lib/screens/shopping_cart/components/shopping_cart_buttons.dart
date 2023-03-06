@@ -28,7 +28,11 @@ class ShoppingCartButtons extends StatelessWidget {
               onTap: () {
                 if (cart.count > 0) {
                   Hive.box<ShoppingCart>('shoppingcart').put(
-                      cart.reference, cart.copyWith(count: cart.count - 1));
+                    cart.reference,
+                    cart.copyWith(
+                      count: cart.count - 1,
+                    ),
+                  );
                 }
               },
             ),
@@ -43,8 +47,12 @@ class ShoppingCartButtons extends StatelessWidget {
           Expanded(
             child: CircleIconButton(
               onTap: () {
-                Hive.box<ShoppingCart>('shoppingcart')
-                    .put(cart.reference, cart.copyWith(count: cart.count + 1));
+                Hive.box<ShoppingCart>('shoppingcart').put(
+                  cart.reference,
+                  cart.copyWith(
+                    count: cart.count + 1,
+                  ),
+                );
               },
             ),
           ),

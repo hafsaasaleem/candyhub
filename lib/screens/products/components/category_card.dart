@@ -20,14 +20,18 @@ class CategoryCard extends StatelessWidget {
       valueListenable: selectedCategory,
       builder: (context, state, widget) {
         return ChoiceChip(
-          side: const BorderSide(color: Colors.black12),
+          side: const BorderSide(
+            color: Colors.black12,
+          ),
           backgroundColor: TowermarketColors.white,
           labelStyle: TowermarketTextStyle.title4,
           onSelected: (value) {
             onChanged(category.reference!);
             selectedCategory.value = category.reference!;
           },
-          label: Text(category.name),
+          label: Text(
+            category.name,
+          ),
           selected: category.reference! == state,
         );
       },

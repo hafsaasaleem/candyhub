@@ -23,22 +23,32 @@ class ShoppingCartDialog extends StatelessWidget {
       left: 16,
       right: 16,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 8.0,
+        ),
         decoration: BoxDecoration(
-            color: TowermarketColors.brick,
-            borderRadius: BorderRadius.circular(4.0)),
+          color: TowermarketColors.brick,
+          borderRadius: BorderRadius.circular(4.0),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("${cart.length} item",
-                    style: TowermarketTextStyle.title2
-                        .copyWith(color: TowermarketColors.white)),
-                Text("PKR $totalAmount",
-                    style: TowermarketTextStyle.title2
-                        .copyWith(color: TowermarketColors.white)),
+                Text(
+                  "${cart.length} item",
+                  style: TowermarketTextStyle.title2.copyWith(
+                    color: TowermarketColors.white,
+                  ),
+                ),
+                Text(
+                  "PKR $totalAmount",
+                  style: TowermarketTextStyle.title2.copyWith(
+                    color: TowermarketColors.white,
+                  ),
+                ),
               ],
             ),
             InkWell(
@@ -47,11 +57,16 @@ class ShoppingCartDialog extends StatelessWidget {
               },
               child: Row(
                 children: [
-                  Text("View cart",
-                      style: TowermarketTextStyle.title2
-                          .copyWith(color: TowermarketColors.white)),
-                  const Icon(Icons.keyboard_arrow_down_rounded,
-                      color: TowermarketColors.white)
+                  Text(
+                    "View cart",
+                    style: TowermarketTextStyle.title2.copyWith(
+                      color: TowermarketColors.white,
+                    ),
+                  ),
+                  const Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    color: TowermarketColors.white,
+                  )
                 ],
               ),
             ),

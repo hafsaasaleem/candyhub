@@ -16,21 +16,34 @@ class ShoppingCartBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Items Total", style: TowermarketTextStyle.title2),
-              Text("${cart.length} items", style: TowermarketTextStyle.title2),
+              Text(
+                "Items Total",
+                style: TowermarketTextStyle.title2,
+              ),
+              Text(
+                "${cart.length} items",
+                style: TowermarketTextStyle.title2,
+              ),
             ],
           ),
-          const SizedBox(height: 6),
+          const SizedBox(
+            height: 6,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Bill Total", style: TowermarketTextStyle.title2),
+              Text(
+                "Bill Total",
+                style: TowermarketTextStyle.title2,
+              ),
               Text(
                 "PKR $totalAmount",
                 style: TowermarketTextStyle.title2.copyWith(

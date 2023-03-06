@@ -13,4 +13,6 @@ class ProductFirebase {
         .map((event) => event.docs.map((doc) => Product.fromSnapshot(doc)));
     return allproducts;
   }
+
+  
 }

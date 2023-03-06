@@ -1,17 +1,29 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:towermarket/screens/products/components/components.dart';
 import 'package:towermarket/widgets/widgets.dart';
 import '../../../service/service.dart';
-import 'category_card.dart';
 import 'package:towermarket/utilities/utilities.dart';
 import 'package:towermarket/models/models.dart';
 
-class CategoryList extends StatelessWidget {
+class CategoryList extends StatefulWidget {
   final Function(String) onChanged;
-  CategoryList({Key? key, required this.onChanged}) : super(key: key);
+  const CategoryList({Key? key, required this.onChanged}) : super(key: key);
 
-  final ValueNotifier<String> selectedCategory = ValueNotifier('biscuit');
+  @override
+  State<CategoryList> createState() => _CategoryListState();
+}
+
+class _CategoryListState extends State<CategoryList> {
+  late final ValueNotifier<String> _selectedCategory;
   final CategoryFirebase _categoryFirebase = CategoryFirebase();
+  @override
+  void initState() {
+    _selectedCategory = ValueNotifier('Candy');
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<Iterable<Category>>(
@@ -40,16 +52,26 @@ class CategoryList extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return CategoryCard(
                     category: snapshot.data!.elementAt(index),
-                    onChanged: onChanged,
-                    selectedCategory: selectedCategory,
+                    onChanged: widget.onChanged,
+                    selectedCategory: _selectedCategory,
                   );
                 },
               ),
             );
           default:
-            return const Center(child: Text("Something went wrong"));
+            return const Center(
+              child: Text(
+                "Something went wrong",
+              ),
+            );
         }
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _selectedCategory.dispose();
+    super.dispose();
   }
 }

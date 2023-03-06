@@ -11,7 +11,13 @@ class ProductScreen extends StatefulWidget {
 }
 
 class _ProductScreenState extends State<ProductScreen> {
-  ValueNotifier<String> selectedCategoryKey = ValueNotifier("biscuit");
+  late final ValueNotifier<String> selectedCategoryKey;
+
+  @override
+  void initState() {
+    selectedCategoryKey = ValueNotifier("Candy");
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,16 +45,23 @@ class _ProductScreenState extends State<ProductScreen> {
             ],
           ),
           ValueListenableBuilder<Box<ShoppingCart>>(
-              valueListenable:
-                  Hive.box<ShoppingCart>('shoppingcart').listenable(),
-              builder: (_, state, widget) {
-                return state.values.isNotEmpty
-                    ? ShoppingCartDialog(
-                        cart: state.values.toList().cast<ShoppingCart>())
-                    : const Opacity(opacity: 0);
-              }),
+            valueListenable:
+                Hive.box<ShoppingCart>('shoppingcart').listenable(),
+            builder: (_, state, widget) {
+              return state.values.isNotEmpty
+                  ? ShoppingCartDialog(
+                      cart: state.values.toList().cast<ShoppingCart>())
+                  : const Opacity(opacity: 0);
+            },
+          ),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    selectedCategoryKey.dispose();
+    super.dispose();
   }
 }

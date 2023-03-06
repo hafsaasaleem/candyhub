@@ -35,16 +35,24 @@ class AddToCartButtons extends StatelessWidget {
               }
             },
           ),
-          const SizedBox(height: 6.0),
+          const SizedBox(
+            height: 6.0,
+          ),
           Text(
             item.count < 10 ? "0${item.count}" : "${item.count}",
             style: TowermarketTextStyle.title3,
           ),
-          const SizedBox(height: 6.0),
+          const SizedBox(
+            height: 6.0,
+          ),
           CircleIconButton(
             onTap: () {
-              Hive.box<ShoppingCart>('shoppingcart')
-                  .put(item.reference, item.copyWith(count: item.count + 1));
+              Hive.box<ShoppingCart>('shoppingcart').put(
+                item.reference,
+                item.copyWith(
+                  count: item.count + 1,
+                ),
+              );
             },
           )
         ],
@@ -52,8 +60,12 @@ class AddToCartButtons extends StatelessWidget {
     } else {
       return CircleIconButton(
         onTap: () {
-          Hive.box<ShoppingCart>('shoppingcart').put(product.reference,
-              ShoppingCart.fromMap(product.toMap()).copyWith(count: 1));
+          Hive.box<ShoppingCart>('shoppingcart').put(
+            product.reference,
+            ShoppingCart.fromMap(product.toMap()).copyWith(
+              count: 1,
+            ),
+          );
         },
       );
     }

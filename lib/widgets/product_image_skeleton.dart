@@ -5,14 +5,12 @@ class ProductImageSkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        height: 120,
-        width: 120,
-        decoration: BoxDecoration(
-          color: Colors.grey[300],
-          borderRadius: BorderRadius.circular(2.0),
-        ),
+    return Container(
+      height: 120,
+      width: 120,
+      decoration: BoxDecoration(
+        color: Colors.grey[300],
+        borderRadius: BorderRadius.circular(2.0),
       ),
     );
   }

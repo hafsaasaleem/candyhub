@@ -15,7 +15,9 @@ class ShoppingCartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: TowermarketColors.brick,
-        title: const Text("Shopping Cart"),
+        title: const Text(
+          "Shopping Cart",
+        ),
       ),
       body: const ShoppingCartItemsList(),
     );

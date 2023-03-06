@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:towermarket/models/shopping_cart.dart';
@@ -45,18 +44,6 @@ class Order extends Equatable {
     );
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      // 'reference': reference,
-      'updatedAt': updatedAt.millisecondsSinceEpoch,
-      'createdAt': createdAt.millisecondsSinceEpoch,
-      'address': address,
-      'total': total,
-      'totalItems': totalItems,
-      'isCompleted': isCompleted,
-      'products': products.map((x) => x.toMap()).toList(),
-    };
-  }
 
   factory Order.fromMap(Map<String, dynamic> map) {
     return Order(
@@ -88,9 +75,7 @@ class Order extends Equatable {
     );
   }
 
-  String toJson() => json.encode(toMap());
 
-  factory Order.fromJson(String source) => Order.fromMap(json.decode(source));
 
   @override
   String toString() {

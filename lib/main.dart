@@ -9,12 +9,18 @@ import 'utilities/towermarket_theme.dart';
 Future<void> main() async {
   await Hive.initFlutter();
 
-  Hive.registerAdapter((ShoppingCartAdapter()));
+  Hive.registerAdapter(
+    (ShoppingCartAdapter()),
+  );
   await Hive.openBox<ShoppingCart>('shoppingcart');
 
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const App());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(
+    const App(),
+  );
 }
 
 class App extends StatelessWidget {

@@ -6,4 +6,4 @@ export 'product_list.dart';
 export 'shopping_cart_dialog.dart';
 export 'product_card_skeleton_list.dart';
 export 'category_card_skeleton_list.dart';
-export 'product_image_skeleton.dart';
+export '../../../widgets/product_image_skeleton.dart';

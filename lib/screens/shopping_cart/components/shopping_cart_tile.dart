@@ -29,16 +29,25 @@ class ShoppingCartTile extends StatelessWidget {
           shape: BoxShape.circle,
         ),
         child: ClipOval(
-          child: CachedImage(imageUrl: cart.imageUrl),
+          child: CachedImage(
+            imageUrl: cart.imageUrl,
+          ),
         ),
       ),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(cart.title, style: TowermarketTextStyle.title3),
-          Text("${cart.quantity} ${cart.symbol}",
-              style: TowermarketTextStyle.title5),
-          const SizedBox(height: 4),
+          Text(
+            cart.title,
+            style: TowermarketTextStyle.title3,
+          ),
+          Text(
+            "${cart.quantity} ${cart.symbol}",
+            style: TowermarketTextStyle.title5,
+          ),
+          const SizedBox(
+            height: 4,
+          ),
         ],
       ),
       subtitle: Text(

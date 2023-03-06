@@ -20,9 +20,13 @@ class ProductCard extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 2,
-                  child: CachedImage(imageUrl: product.imageUrl),
+                  child: CachedImage(
+                    imageUrl: product.imageUrl,
+                  ),
                 ),
-                const SizedBox(width: 16),
+                const SizedBox(
+                  width: 16,
+                ),
                 Expanded(
                   flex: 2,
                   child: Column(
@@ -37,16 +41,21 @@ class ProductCard extends StatelessWidget {
                       ),
                       Text(
                         product.brand,
-                        style: TowermarketTextStyle.title5
-                            .copyWith(fontWeight: FontWeight.w600),
+                        style: TowermarketTextStyle.title5.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                      const SizedBox(height: 6),
+                      const SizedBox(
+                        height: 6,
+                      ),
                       Text(
                         "${product.quantity} ${product.symbol}",
                         style: TowermarketTextStyle.title5,
                       ),
-                      Text("PKR ${product.price}",
-                          style: TowermarketTextStyle.title2),
+                      Text(
+                        "PKR ${product.price}",
+                        style: TowermarketTextStyle.title2,
+                      ),
                     ],
                   ),
                 ),

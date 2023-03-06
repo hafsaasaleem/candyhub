@@ -4,6 +4,7 @@ class ListViewSeparated extends StatelessWidget {
   const ListViewSeparated({
     Key? key,
     required this.itemBuilder,
+    this.scrollController,
     required this.itemCount,
     this.scrollDirection = Axis.vertical,
     this.separatedHeight,
@@ -11,13 +12,16 @@ class ListViewSeparated extends StatelessWidget {
   }) : super(key: key);
 
   final Widget Function(BuildContext, int) itemBuilder;
+  final ScrollController? scrollController;
   final int itemCount;
   final Axis scrollDirection;
   final double? separatedHeight;
   final double? separatedWidth;
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      controller: scrollController,
       scrollDirection: scrollDirection,
       padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
       shrinkWrap: true,
@@ -25,9 +29,13 @@ class ListViewSeparated extends StatelessWidget {
       itemBuilder: itemBuilder,
       separatorBuilder: (context, index) {
         if (separatedHeight != null) {
-          return SizedBox(height: separatedHeight);
+          return SizedBox(
+            height: separatedHeight,
+          );
         } else {
-          return SizedBox(width: separatedWidth);
+          return SizedBox(
+            width: separatedWidth,
+          );
         }
       },
     );

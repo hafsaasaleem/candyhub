@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../utilities/utilities.dart';
 
 class CircleIconButton extends StatelessWidget {

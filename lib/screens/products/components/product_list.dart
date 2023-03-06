@@ -20,7 +20,9 @@ class ProductList extends StatelessWidget {
         stream: _productFirebase.allCategories(documentId: categoryKey),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const Text('Something went wrong');
+            return const Text(
+              'Something went wrong',
+            );
           }
           switch (snapshot.connectionState) {
             case ConnectionState.none:
@@ -35,7 +37,11 @@ class ProductList extends StatelessWidget {
                 },
               );
             default:
-              return const Center(child: Text("Something went wrong"));
+              return const Center(
+                child: Text(
+                  "Something went wrong",
+                ),
+              );
           }
         },
       ),

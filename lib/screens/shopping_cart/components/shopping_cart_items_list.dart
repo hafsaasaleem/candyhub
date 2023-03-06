@@ -27,8 +27,10 @@ class ShoppingCartItemsList extends StatelessWidget {
           );
         } else {
           return Center(
-            child:
-                Text("No Item added Yet!", style: TowermarketTextStyle.title2),
+            child: Text(
+              "No Item added Yet!",
+              style: TowermarketTextStyle.title2,
+            ),
           );
         }
       },

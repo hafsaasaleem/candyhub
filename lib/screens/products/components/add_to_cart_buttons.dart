@@ -21,53 +21,107 @@ class AddToCartButtons extends StatelessWidget {
         Hive.box<ShoppingCart>('shoppingcart').delete(cart!.reference);
       }
     }
-    if (cart != null) {
-      final ShoppingCart item = cart!;
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleIconButton(
-            icon: Icons.remove,
-            onTap: () {
-              if (item.count > 0) {
+    final ShoppingCart? item = cart;
+
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 400),
+      switchInCurve: Curves.easeInOut,
+      switchOutCurve: Curves.easeInOut,
+      child: item == null
+          ? CircleIconButton(
+              onTap: () {
                 Hive.box<ShoppingCart>('shoppingcart').put(
-                    cart!.reference, cart!.copyWith(count: cart!.count - 1));
-              }
-            },
-          ),
-          const SizedBox(
-            height: 6.0,
-          ),
-          Text(
-            item.count < 10 ? "0${item.count}" : "${item.count}",
-            style: TowermarketTextStyle.title3,
-          ),
-          const SizedBox(
-            height: 6.0,
-          ),
-          CircleIconButton(
-            onTap: () {
-              Hive.box<ShoppingCart>('shoppingcart').put(
-                item.reference,
-                item.copyWith(
-                  count: item.count + 1,
+                  product.reference,
+                  ShoppingCart.fromMap(product.toMap()).copyWith(
+                    count: 1,
+                  ),
+                );
+              },
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleIconButton(
+                  icon: Icons.remove,
+                  onTap: () {
+                    if (item.count > 0) {
+                      Hive.box<ShoppingCart>('shoppingcart').put(
+                          cart!.reference,
+                          cart!.copyWith(count: cart!.count - 1));
+                    }
+                  },
                 ),
-              );
-            },
-          )
-        ],
-      );
-    } else {
-      return CircleIconButton(
-        onTap: () {
-          Hive.box<ShoppingCart>('shoppingcart').put(
-            product.reference,
-            ShoppingCart.fromMap(product.toMap()).copyWith(
-              count: 1,
+                Padding(
+                  padding: const EdgeInsets.only(top: 6.0),
+                  child: Text(
+                    item.count < 10 ? "0${item.count}" : "${item.count}",
+                    style: TowermarketTextStyle.title3,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 6.0),
+                  child: CircleIconButton(
+                    onTap: () {
+                      Hive.box<ShoppingCart>('shoppingcart').put(
+                        item.reference,
+                        item.copyWith(
+                          count: item.count + 1,
+                        ),
+                      );
+                    },
+                  ),
+                )
+              ],
             ),
-          );
-        },
-      );
-    }
+    );
+
+    // if (cart != null) {
+    //   // final ShoppingCart item = cart!;
+    //   return Column(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: [
+    //       CircleIconButton(
+    //         icon: Icons.remove,
+    //         onTap: () {
+    //           if (item.count > 0) {
+    //             Hive.box<ShoppingCart>('shoppingcart').put(
+    //                 cart!.reference, cart!.copyWith(count: cart!.count - 1));
+    //           }
+    //         },
+    //       ),
+    //       const SizedBox(
+    //         height: 6.0,
+    //       ),
+    //       Text(
+    //         item.count < 10 ? "0${item.count}" : "${item.count}",
+    //         style: TowermarketTextStyle.title3,
+    //       ),
+    //       const SizedBox(
+    //         height: 6.0,
+    //       ),
+    //       CircleIconButton(
+    //         onTap: () {
+    //           Hive.box<ShoppingCart>('shoppingcart').put(
+    //             item.reference,
+    //             item.copyWith(
+    //               count: item.count + 1,
+    //             ),
+    //           );
+    //         },
+    //       )
+    //     ],
+    //   );
+    // } else {
+    //   return CircleIconButton(
+    //     onTap: () {
+    //       Hive.box<ShoppingCart>('shoppingcart').put(
+    //         product.reference,
+    //         ShoppingCart.fromMap(product.toMap()).copyWith(
+    //           count: 1,
+    //         ),
+    //       );
+    //     },
+    //   );
+    // }
   }
 }

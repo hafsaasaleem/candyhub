@@ -48,10 +48,17 @@ class _ProductScreenState extends State<ProductScreen> {
             valueListenable:
                 Hive.box<ShoppingCart>('shoppingcart').listenable(),
             builder: (_, state, widget) {
-              return state.values.isNotEmpty
-                  ? ShoppingCartDialog(
-                      cart: state.values.toList().cast<ShoppingCart>())
-                  : const Opacity(opacity: 0);
+              return AnimatedPositioned(
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeInOut,
+                bottom: state.values.isNotEmpty ? 16 : 0,
+                left: 16,
+                right: 16,
+                child: state.values.isNotEmpty
+                    ? ShoppingCartDialog(
+                        cart: state.values.toList().cast<ShoppingCart>())
+                    : const Opacity(opacity: 0),
+              );
             },
           ),
         ],

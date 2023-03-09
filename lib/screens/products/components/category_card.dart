@@ -20,6 +20,9 @@ class CategoryCard extends StatelessWidget {
       valueListenable: selectedCategory,
       builder: (context, state, widget) {
         return ChoiceChip(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2),
+          ),
           side: const BorderSide(
             color: Colors.black12,
           ),

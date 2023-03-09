@@ -9,6 +9,15 @@ abstract class TowermarketTextStyle {
     color: TowermarketColors.black,
   );
 
+  static TextStyle get large {
+    return _baseStyle.copyWith(
+      fontFamily: "GoogleSans",
+      fontWeight: FontWeight.w600,
+      fontSize: 32,
+      color: TowermarketColors.purple,
+    );
+  }
+
   static TextStyle get heading1 {
     return _baseStyle.copyWith(
       fontFamily: "GoogleSans",

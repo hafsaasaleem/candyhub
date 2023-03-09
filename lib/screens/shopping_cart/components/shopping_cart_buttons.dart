@@ -18,7 +18,7 @@ class ShoppingCartButtons extends StatelessWidget {
       Hive.box<ShoppingCart>('shoppingcart').delete(cart.reference);
     }
     return SizedBox(
-      width: 90,
+      width: 66,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -37,6 +37,7 @@ class ShoppingCartButtons extends StatelessWidget {
               },
             ),
           ),
+          const SizedBox(width: 3),
           Expanded(
             child: Text(
               cart.count < 10 ? "0${cart.count}" : "${cart.count}",
@@ -44,6 +45,7 @@ class ShoppingCartButtons extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
+          const SizedBox(width: 3),
           Expanded(
             child: CircleIconButton(
               onTap: () {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:towermarket/models/models.dart';
-import 'package:towermarket/screens/shopping_cart/view/shopping_cart_screen.dart';
+import 'package:towermarket/screens/screens.dart';
 import 'package:towermarket/utilities/utilities.dart';
+import '../../login/login_screen.dart';
 
 class ShoppingCartDialog extends StatelessWidget {
   final List<ShoppingCart> cart;
@@ -24,8 +25,8 @@ class ShoppingCartDialog extends StatelessWidget {
         vertical: 8.0,
       ),
       decoration: BoxDecoration(
-        color: TowermarketColors.brick,
-        borderRadius: BorderRadius.circular(4.0),
+        color: TowermarketColors.purple,
+        borderRadius: BorderRadius.circular(2.0),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

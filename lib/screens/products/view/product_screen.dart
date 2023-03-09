@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:towermarket/models/shopping_cart.dart';
@@ -23,8 +24,10 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Products"),
+        titleSpacing: 0,
+        title: const Text("CandyHub"),
       ),
+      drawer: Drawer(),
       body: Stack(
         children: [
           Column(

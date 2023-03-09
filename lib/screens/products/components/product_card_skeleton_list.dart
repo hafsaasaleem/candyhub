@@ -27,6 +27,7 @@ class ProductCardSkeletonList extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
+                      flex: 3,
                       child: Column(
                         children: [
                           Expanded(
@@ -63,9 +64,9 @@ class ProductCardSkeletonList extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.grey[300],
-                          shape: BoxShape.circle,
+                          shape: BoxShape.rectangle,
                         ),
-                        margin: const EdgeInsets.all(24),
+                        margin: const EdgeInsets.fromLTRB(0, 12, 18, 12),
                       ),
                     ),
                   ],

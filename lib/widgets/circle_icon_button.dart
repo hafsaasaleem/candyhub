@@ -16,10 +16,11 @@ class CircleIconButton extends StatelessWidget {
       customBorder: const CircleBorder(),
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(6.0),
-        decoration: const BoxDecoration(
+        padding: const EdgeInsets.fromLTRB(4, 4.5, 4, 4.5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(2),
           color: TowermarketColors.black,
-          shape: BoxShape.circle,
+          shape: BoxShape.rectangle,
         ),
         child: Icon(
           icon,

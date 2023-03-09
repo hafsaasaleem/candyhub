@@ -19,11 +19,19 @@ class ShoppingCartItemsList extends StatelessWidget {
             state.values.toList().cast<ShoppingCart>();
 
         if (cart.isNotEmpty) {
-          return ListViewSeparated(
-            itemCount: state.values.length,
-            itemBuilder: (context, index) {
-              return ShoppingCartTile(cart: cart[index]);
-            },
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: ListViewSeparated(
+                  itemCount: state.values.length,
+                  itemBuilder: (context, index) {
+                    return ShoppingCartTile(cart: cart[index]);
+                  },
+                ),
+              ),
+              const ShoppingCartBottomBar(),
+            ],
           );
         } else {
           return Center(

@@ -14,7 +14,7 @@ class ShoppingCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: TowermarketColors.brick,
+        backgroundColor: TowermarketColors.purple,
         title: const Text(
           "Shopping Cart",
         ),

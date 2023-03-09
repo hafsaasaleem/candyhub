@@ -19,7 +19,7 @@ class CategoryCardSkeletonList extends StatelessWidget {
             ),
             width: 80,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(2.0),
               color: Colors.grey[300],
             ),
           );

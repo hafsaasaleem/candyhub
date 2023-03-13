@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'package:firebase_auth/firebase_auth.dart'
     show FirebaseAuth, FirebaseAuthException;
-import 'package:towermarket/firebase_options.dart';
-import 'package:towermarket/service/auth/auth_user.dart';
+import 'package:candyhub/firebase_options.dart';
+import 'package:candyhub/service/auth/auth_user.dart';
 
 import 'auth_exceptions.dart';
 import 'auth_provider.dart';

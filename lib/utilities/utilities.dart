@@ -1,3 +1,3 @@
-export 'towermarket_colors.dart';
-export 'towermarket_text_style.dart';
-export 'towermarket_theme.dart';
+export 'candyhub_colors.dart';
+export 'candyhub_theme.dart';
+export 'candyhub_text_style.dart';

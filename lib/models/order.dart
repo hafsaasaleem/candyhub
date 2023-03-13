@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
-import 'package:towermarket/models/shopping_cart.dart';
+import 'package:candyhub/models/shopping_cart.dart';
 
 class Order extends Equatable {
   final String? reference;
@@ -44,7 +44,6 @@ class Order extends Equatable {
     );
   }
 
-
   factory Order.fromMap(Map<String, dynamic> map) {
     return Order(
       reference: map['reference'],
@@ -74,8 +73,6 @@ class Order extends Equatable {
           map['products']?.map((x) => ShoppingCart.fromMap(x))),
     );
   }
-
-
 
   @override
   String toString() {

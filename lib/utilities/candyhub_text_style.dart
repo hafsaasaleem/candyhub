@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:towermarket/utilities/towermarket_colors.dart';
+import 'package:candyhub/utilities/candyhub_colors.dart';
 
-abstract class TowermarketTextStyle {
+abstract class CandyHubTextStyle {
   static const TextStyle _baseStyle = TextStyle(
     fontFamily: "SourceSansPro",
     fontWeight: FontWeight.w400,
     fontSize: 16,
-    color: TowermarketColors.black,
+    color: CandyHubColors.black,
   );
 
   static TextStyle get large {
@@ -14,7 +14,7 @@ abstract class TowermarketTextStyle {
       fontFamily: "GoogleSans",
       fontWeight: FontWeight.w600,
       fontSize: 32,
-      color: TowermarketColors.purple,
+      color: CandyHubColors.purple,
     );
   }
 
@@ -23,7 +23,7 @@ abstract class TowermarketTextStyle {
       fontFamily: "GoogleSans",
       fontWeight: FontWeight.w600,
       fontSize: 24,
-      color: TowermarketColors.black,
+      color: CandyHubColors.black,
     );
   }
 
@@ -32,7 +32,7 @@ abstract class TowermarketTextStyle {
       fontFamily: "GoogleSans",
       fontWeight: FontWeight.w600,
       fontSize: 22,
-      color: TowermarketColors.white,
+      color: CandyHubColors.white,
     );
   }
 
@@ -41,7 +41,7 @@ abstract class TowermarketTextStyle {
       fontFamily: "GoogleSans",
       fontWeight: FontWeight.w600,
       fontSize: 20,
-      color: TowermarketColors.black,
+      color: CandyHubColors.black,
     );
   }
 
@@ -50,7 +50,7 @@ abstract class TowermarketTextStyle {
       fontFamily: "GoogleSans",
       fontWeight: FontWeight.w600,
       fontSize: 18,
-      color: TowermarketColors.white,
+      color: CandyHubColors.white,
     );
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/models/models.dart';
-import 'package:towermarket/utilities/utilities.dart';
+import 'package:candyhub/models/models.dart';
+import 'package:candyhub/utilities/utilities.dart';
 
 class CategoryCard extends StatelessWidget {
   final Category category;
@@ -26,8 +26,8 @@ class CategoryCard extends StatelessWidget {
           side: const BorderSide(
             color: Colors.black12,
           ),
-          backgroundColor: TowermarketColors.white,
-          labelStyle: TowermarketTextStyle.title4,
+          backgroundColor: CandyHubColors.white,
+          labelStyle: CandyHubTextStyle.title4,
           onSelected: (value) {
             onChanged(category.reference!);
             selectedCategory.value = category.reference!;

@@ -1,4 +1,4 @@
-package com.example.towermarket
+package com.example.candyhub
 
 import io.flutter.embedding.android.FlutterActivity
 

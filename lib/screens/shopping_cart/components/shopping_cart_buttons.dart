@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:towermarket/models/shopping_cart.dart';
-import 'package:towermarket/utilities/utilities.dart';
-import 'package:towermarket/widgets/widgets.dart';
+import 'package:candyhub/models/shopping_cart.dart';
+import 'package:candyhub/utilities/utilities.dart';
+import 'package:candyhub/widgets/widgets.dart';
 
 class ShoppingCartButtons extends StatelessWidget {
   const ShoppingCartButtons({
@@ -41,7 +41,7 @@ class ShoppingCartButtons extends StatelessWidget {
           Expanded(
             child: Text(
               cart.count < 10 ? "0${cart.count}" : "${cart.count}",
-              style: TowermarketTextStyle.title2,
+              style: CandyHubTextStyle.title2,
               textAlign: TextAlign.center,
             ),
           ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/utilities/towermarket_colors.dart';
-import 'package:towermarket/utilities/towermarket_text_style.dart';
+import 'package:candyhub/utilities/candyhub_colors.dart';
+import 'candyhub_text_style.dart';
 
-abstract class TowermarketTheme {
+abstract class CandyHubTheme {
   static ThemeData get standard {
     return ThemeData(
       textTheme: TextTheme(
-        titleMedium: TowermarketTextStyle.title1,
+        titleMedium: CandyHubTextStyle.title1,
       ),
-      scaffoldBackgroundColor: TowermarketColors.white,
+      scaffoldBackgroundColor: CandyHubColors.white,
       appBarTheme: _appBarTheme(),
       elevatedButtonTheme: _elevatedButtonThemeData(),
       inputDecorationTheme: _inputDecorationTheme(),
@@ -19,9 +19,9 @@ abstract class TowermarketTheme {
   }
 
   static AppBarTheme _appBarTheme() => AppBarTheme(
-        backgroundColor: TowermarketColors.purple,
-        titleTextStyle: TowermarketTextStyle.heading3.copyWith(
-          color: TowermarketColors.white,
+        backgroundColor: CandyHubColors.purple,
+        titleTextStyle: CandyHubTextStyle.heading3.copyWith(
+          color: CandyHubColors.white,
         ),
       );
 
@@ -29,7 +29,7 @@ abstract class TowermarketTheme {
       ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
-          backgroundColor: TowermarketColors.purple,
+          backgroundColor: CandyHubColors.purple,
           padding: const EdgeInsets.symmetric(vertical: 16),
         ),
       );
@@ -41,14 +41,14 @@ abstract class TowermarketTheme {
           borderSide: const BorderSide(
             style: BorderStyle.solid,
             width: 0.6,
-            color: TowermarketColors.black,
+            color: CandyHubColors.black,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(2),
           borderSide: const BorderSide(
             width: 0.6,
-            color: TowermarketColors.black,
+            color: CandyHubColors.black,
           ),
         ),
       );

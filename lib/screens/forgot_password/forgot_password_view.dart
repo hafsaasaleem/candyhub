@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:towermarket/extensions/buildcontext/loc.dart';
+import 'package:candyhub/extensions/buildcontext/loc.dart';
 
 import '../../service/auth/bloc/auth_bloc.dart';
 import '../../service/auth/bloc/auth_event.dart';

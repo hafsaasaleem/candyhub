@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:towermarket/models/models.dart';
-import 'package:towermarket/widgets/widgets.dart';
+import 'package:candyhub/models/models.dart';
+import 'package:candyhub/widgets/widgets.dart';
 import 'add_to_cart_buttons.dart';
-import 'package:towermarket/utilities/utilities.dart';
+import 'package:candyhub/utilities/utilities.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -36,12 +36,12 @@ class ProductCard extends StatelessWidget {
                       Text(
                         product.title,
                         overflow: TextOverflow.ellipsis,
-                        style: TowermarketTextStyle.title3,
+                        style: CandyHubTextStyle.title3,
                         maxLines: 2,
                       ),
                       Text(
                         product.brand,
-                        style: TowermarketTextStyle.title5.copyWith(
+                        style: CandyHubTextStyle.title5.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -50,11 +50,11 @@ class ProductCard extends StatelessWidget {
                       ),
                       Text(
                         "${product.quantity} ${product.symbol}",
-                        style: TowermarketTextStyle.title5,
+                        style: CandyHubTextStyle.title5,
                       ),
                       Text(
                         "PKR ${product.price}",
-                        style: TowermarketTextStyle.title2,
+                        style: CandyHubTextStyle.title2,
                       ),
                     ],
                   ),

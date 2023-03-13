@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:towermarket/models/shopping_cart.dart';
+import 'package:candyhub/models/shopping_cart.dart';
 import '../components/components.dart';
+import 'package:candyhub/utilities/utilities.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({Key? key}) : super(key: key);
@@ -27,7 +27,31 @@ class _ProductScreenState extends State<ProductScreen> {
         titleSpacing: 0,
         title: const Text("CandyHub"),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                color: CandyHubColors.purple,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.person, size: 40),
+                  Text(
+                    "Abubakar Shaikh",
+                    style: CandyHubTextStyle.heading4,
+                  ),
+                ],
+              ),
+            ),
+            const ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Logout"),
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Column(

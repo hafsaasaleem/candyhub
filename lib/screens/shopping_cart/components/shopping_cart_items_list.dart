@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:towermarket/models/models.dart';
-import 'package:towermarket/utilities/utilities.dart';
-import 'package:towermarket/widgets/widgets.dart';
+import 'package:candyhub/models/models.dart';
+import 'package:candyhub/utilities/utilities.dart';
+import 'package:candyhub/widgets/widgets.dart';
 import 'components.dart';
 
 class ShoppingCartItemsList extends StatelessWidget {
@@ -37,7 +37,7 @@ class ShoppingCartItemsList extends StatelessWidget {
           return Center(
             child: Text(
               "No Item added Yet!",
-              style: TowermarketTextStyle.title2,
+              style: CandyHubTextStyle.title2,
             ),
           );
         }

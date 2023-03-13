@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/models/shopping_cart.dart';
-import 'package:towermarket/utilities/utilities.dart';
-import 'package:towermarket/widgets/widgets.dart';
+import 'package:candyhub/models/shopping_cart.dart';
+import 'package:candyhub/utilities/utilities.dart';
+import 'package:candyhub/widgets/widgets.dart';
 import 'shopping_cart_buttons.dart';
 
 class ShoppingCartTile extends StatelessWidget {
@@ -22,7 +22,7 @@ class ShoppingCartTile extends StatelessWidget {
         padding: const EdgeInsets.all(4.0),
         decoration: BoxDecoration(
           border: Border.all(
-            color: TowermarketColors.black,
+            color: CandyHubColors.black,
             width: 0.5,
             style: BorderStyle.solid,
           ),
@@ -39,11 +39,11 @@ class ShoppingCartTile extends StatelessWidget {
         children: [
           Text(
             cart.title,
-            style: TowermarketTextStyle.title3,
+            style: CandyHubTextStyle.title3,
           ),
           Text(
             "${cart.quantity} ${cart.symbol}",
-            style: TowermarketTextStyle.title5,
+            style: CandyHubTextStyle.title5,
           ),
           const SizedBox(
             height: 4,
@@ -52,7 +52,7 @@ class ShoppingCartTile extends StatelessWidget {
       ),
       subtitle: Text(
         "PKR ${cart.price * cart.count}",
-        style: TowermarketTextStyle.title3,
+        style: CandyHubTextStyle.title3,
       ),
       trailing: ShoppingCartButtons(cart: cart),
     );

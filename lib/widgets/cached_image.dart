@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:towermarket/screens/products/components/components.dart';
+import 'package:candyhub/screens/products/components/components.dart';
 
 class CachedImage extends StatelessWidget {
   const CachedImage({

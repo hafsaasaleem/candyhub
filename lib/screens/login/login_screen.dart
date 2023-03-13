@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:towermarket/extensions/buildcontext/loc.dart';
-import 'package:towermarket/main.dart';
-import 'package:towermarket/utilities/utilities.dart';
-
+import 'package:candyhub/extensions/buildcontext/loc.dart';
+import 'package:candyhub/utilities/utilities.dart';
 import '../../service/auth/auth_exceptions.dart';
 import '../../service/auth/bloc/auth_bloc.dart';
 import '../../service/auth/bloc/auth_event.dart';
 import '../../service/auth/bloc/auth_state.dart';
 import '../../utilities/dialogs/error_dialog.dart';
-import '../products/view/product_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   static Route<LoginScreen> route() {
@@ -82,7 +79,7 @@ class _LoginFormState extends State<LoginForm> {
       children: [
         Text(
           "Login",
-          style: TowermarketTextStyle.heading1,
+          style: CandyHubTextStyle.heading1,
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 24),
@@ -120,7 +117,7 @@ class _LoginFormState extends State<LoginForm> {
             onPressed: () {},
             icon: const Icon(
               CupertinoIcons.arrow_counterclockwise,
-              color: TowermarketColors.purple,
+              color: CandyHubColors.purple,
               size: 36,
             ))
       ],

@@ -19,13 +19,13 @@ class CircleIconButton extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(4, 4.5, 4, 4.5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(2),
-          color: TowermarketColors.black,
+          color: CandyHubColors.black,
           shape: BoxShape.rectangle,
         ),
         child: Icon(
           icon,
           size: 12,
-          color: TowermarketColors.white,
+          color: CandyHubColors.white,
         ),
       ),
     );

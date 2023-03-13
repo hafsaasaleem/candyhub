@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/screens/products/components/components.dart';
-import 'package:towermarket/widgets/widgets.dart';
+import 'package:candyhub/screens/products/components/components.dart';
+import 'package:candyhub/widgets/widgets.dart';
 import '../../../service/service.dart';
-import 'package:towermarket/utilities/utilities.dart';
-import 'package:towermarket/models/models.dart';
+import 'package:candyhub/utilities/utilities.dart';
+import 'package:candyhub/models/models.dart';
 
 class CategoryList extends StatefulWidget {
   final Function(String) onChanged;
@@ -32,7 +32,7 @@ class _CategoryListState extends State<CategoryList> {
               child: Text(
             'Something went wrong \nfrom Database',
             textAlign: TextAlign.center,
-            style: TowermarketTextStyle.title1,
+            style: CandyHubTextStyle.title1,
           ));
         }
         switch (snapshot.connectionState) {

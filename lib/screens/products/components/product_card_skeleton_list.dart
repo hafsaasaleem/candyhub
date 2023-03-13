@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/widgets/list_view_separated.dart';
+import 'package:candyhub/widgets/list_view_separated.dart';
 
 class ProductCardSkeletonList extends StatelessWidget {
   const ProductCardSkeletonList({Key? key}) : super(key: key);

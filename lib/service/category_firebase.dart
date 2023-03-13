@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:towermarket/models/category.dart';
+import 'package:candyhub/models/category.dart';
 
 class CategoryFirebase {
   final categories = FirebaseFirestore.instance.collection('categories');

@@ -57,8 +57,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '256489545026',
     projectId: 'todos-1f195',
     storageBucket: 'todos-1f195.appspot.com',
-    iosClientId: '256489545026-dctaqer5hdkmsg0mr4p4f016l4t5oeip.apps.googleusercontent.com',
-    iosBundleId: 'com.example.towermarket',
+    iosClientId:
+        '256489545026-dctaqer5hdkmsg0mr4p4f016l4t5oeip.apps.googleusercontent.com',
+    iosBundleId: 'com.example.candyhub',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -67,7 +68,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '256489545026',
     projectId: 'todos-1f195',
     storageBucket: 'todos-1f195.appspot.com',
-    iosClientId: '256489545026-dctaqer5hdkmsg0mr4p4f016l4t5oeip.apps.googleusercontent.com',
-    iosBundleId: 'com.example.towermarket',
+    iosClientId:
+        '256489545026-dctaqer5hdkmsg0mr4p4f016l4t5oeip.apps.googleusercontent.com',
+    iosBundleId: 'com.example.candyhub',
   );
 }

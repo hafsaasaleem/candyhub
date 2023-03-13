@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:towermarket/utilities/utilities.dart';
+import 'package:candyhub/utilities/utilities.dart';
 import '../components/components.dart';
 
 class ShoppingCartScreen extends StatelessWidget {
@@ -14,7 +14,7 @@ class ShoppingCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: TowermarketColors.purple,
+        backgroundColor: CandyHubColors.purple,
         title: const Text(
           "Shopping Cart",
         ),

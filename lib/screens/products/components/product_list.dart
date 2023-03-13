@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/models/models.dart';
-import 'package:towermarket/screens/products/components/components.dart';
-import 'package:towermarket/widgets/widgets.dart';
+import 'package:candyhub/models/models.dart';
+import 'package:candyhub/screens/products/components/components.dart';
+import 'package:candyhub/widgets/widgets.dart';
 import '../../../service/service.dart';
 
 class ProductList extends StatelessWidget {

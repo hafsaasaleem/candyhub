@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/extensions/buildcontext/loc.dart';
+import 'package:candyhub/extensions/buildcontext/loc.dart';
 
 import 'generic_dialog.dart';
 

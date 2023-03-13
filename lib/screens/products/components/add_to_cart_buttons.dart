@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:towermarket/models/models.dart';
-import 'package:towermarket/utilities/utilities.dart';
-import 'package:towermarket/widgets/widgets.dart';
+import 'package:candyhub/models/models.dart';
+import 'package:candyhub/utilities/utilities.dart';
+import 'package:candyhub/widgets/widgets.dart';
 
 class AddToCartButtons extends StatelessWidget {
   const AddToCartButtons({
@@ -55,7 +55,7 @@ class AddToCartButtons extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 6.0),
                   child: Text(
                     item.count < 10 ? "0${item.count}" : "${item.count}",
-                    style: TowermarketTextStyle.title3,
+                    style: CandyHubTextStyle.title3,
                   ),
                 ),
                 Padding(
@@ -94,7 +94,7 @@ class AddToCartButtons extends StatelessWidget {
     //       ),
     //       Text(
     //         item.count < 10 ? "0${item.count}" : "${item.count}",
-    //         style: TowermarketTextStyle.title3,
+    //         style: candyhubTextStyle.title3,
     //       ),
     //       const SizedBox(
     //         height: 6.0,

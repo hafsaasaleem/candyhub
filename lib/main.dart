@@ -2,21 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:towermarket/screens/forgot_password/forgot_password_view.dart';
-import 'package:towermarket/screens/login/login_screen.dart';
-import 'package:towermarket/screens/register/register_view.dart';
-import 'package:towermarket/screens/verify_email/verify_email_screen.dart';
-import 'package:towermarket/service/auth/bloc/auth_bloc.dart';
-import 'package:towermarket/service/auth/bloc/auth_event.dart';
-import 'package:towermarket/service/auth/bloc/auth_state.dart';
-import 'package:towermarket/service/auth/firebase_auth_provider.dart';
+import 'package:candyhub/screens/forgot_password/forgot_password_view.dart';
+import 'package:candyhub/screens/login/login_screen.dart';
+import 'package:candyhub/screens/register/register_view.dart';
+import 'package:candyhub/screens/verify_email/verify_email_screen.dart';
+import 'package:candyhub/service/auth/bloc/auth_bloc.dart';
+import 'package:candyhub/service/auth/bloc/auth_event.dart';
+import 'package:candyhub/service/auth/bloc/auth_state.dart';
+import 'package:candyhub/service/auth/firebase_auth_provider.dart';
 import 'firebase_options.dart';
 import 'helpers/loading/loading_screen.dart';
 import 'models/shopping_cart.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'screens/screens.dart';
-import 'utilities/towermarket_theme.dart';
+import 'utilities/candyhub_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 Future<void> main() async {
   await Hive.initFlutter();
 
@@ -46,18 +47,15 @@ class App extends StatelessWidget {
     return MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-
       debugShowCheckedModeBanner: false,
-      theme: TowermarketTheme.standard,
+      theme: CandyHubTheme.standard,
       home: BlocProvider(
-         create: (context) => AuthBloc(FirebaseAuthProvider()),
+        create: (context) => AuthBloc(FirebaseAuthProvider()),
         child: const HomePage(),
       ),
     );
   }
 }
-
-
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

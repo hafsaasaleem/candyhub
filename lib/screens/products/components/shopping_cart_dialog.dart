@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/models/models.dart';
-import 'package:towermarket/screens/screens.dart';
-import 'package:towermarket/utilities/utilities.dart';
+import 'package:candyhub/models/models.dart';
+import 'package:candyhub/screens/screens.dart';
+import 'package:candyhub/utilities/utilities.dart';
 import '../../login/login_screen.dart';
 
 class ShoppingCartDialog extends StatelessWidget {
@@ -25,7 +25,7 @@ class ShoppingCartDialog extends StatelessWidget {
         vertical: 8.0,
       ),
       decoration: BoxDecoration(
-        color: TowermarketColors.purple,
+        color: CandyHubColors.purple,
         borderRadius: BorderRadius.circular(2.0),
       ),
       child: Row(
@@ -36,14 +36,14 @@ class ShoppingCartDialog extends StatelessWidget {
             children: [
               Text(
                 "${cart.length} item",
-                style: TowermarketTextStyle.title2.copyWith(
-                  color: TowermarketColors.white,
+                style: CandyHubTextStyle.title2.copyWith(
+                  color: CandyHubColors.white,
                 ),
               ),
               Text(
                 "PKR $totalAmount",
-                style: TowermarketTextStyle.title2.copyWith(
-                  color: TowermarketColors.white,
+                style: CandyHubTextStyle.title2.copyWith(
+                  color: CandyHubColors.white,
                 ),
               ),
             ],
@@ -56,13 +56,13 @@ class ShoppingCartDialog extends StatelessWidget {
               children: [
                 Text(
                   "View cart",
-                  style: TowermarketTextStyle.title2.copyWith(
-                    color: TowermarketColors.white,
+                  style: CandyHubTextStyle.title2.copyWith(
+                    color: CandyHubColors.white,
                   ),
                 ),
                 const Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: TowermarketColors.white,
+                  color: CandyHubColors.white,
                 ),
               ],
             ),

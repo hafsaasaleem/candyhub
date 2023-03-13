@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:towermarket/screens/login/login_screen.dart';
 import '../../../utilities/utilities.dart';
+import '../../place_order/view/place_order_screen.dart';
 
 class ShoppingCartBottomBar extends StatelessWidget {
   const ShoppingCartBottomBar({super.key});
@@ -11,11 +11,11 @@ class ShoppingCartBottomBar extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(context, LoginScreen.route());
+          Navigator.push(context, PlaceOrderScreen.route());
         },
         child: Text(
-          "Login",
-          style: TowermarketTextStyle.heading4,
+          "Check out",
+          style: CandyHubTextStyle.heading4,
         ),
       ),
     );
@@ -62,11 +62,11 @@ class ShoppingCartBottomBar extends StatelessWidget {
 //             children: [
 //               Text(
 //                 "Items Total",
-//                 style: TowermarketTextStyle.title2,
+//                 style: candyhubTextStyle.title2,
 //               ),
 //               Text(
 //                 "${cart.length} items",
-//                 style: TowermarketTextStyle.title2,
+//                 style: candyhubTextStyle.title2,
 //               ),
 //             ],
 //           ),
@@ -78,13 +78,13 @@ class ShoppingCartBottomBar extends StatelessWidget {
 //             children: [
 //               Text(
 //                 "Bill Total",
-//                 style: TowermarketTextStyle.title2,
+//                 style: candyhubTextStyle.title2,
 //               ),
 //               Text(
 //                 "PKR $totalAmount",
-//                 style: TowermarketTextStyle.title2.copyWith(
-//                   backgroundColor: TowermarketColors.black,
-//                   color: TowermarketColors.white,
+//                 style: candyhubTextStyle.title2.copyWith(
+//                   backgroundColor: candyhubColors.black,
+//                   color: candyhubColors.white,
 //                 ),
 //               ),
 //             ],

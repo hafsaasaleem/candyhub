@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class TowermarketColors {
+abstract class CandyHubColors {
   // static const Color brick = Color(0xffBC4A3C);
   static const Color purple = Color(0xff9B4F96);
 

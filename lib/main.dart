@@ -51,7 +51,7 @@ class App extends StatelessWidget {
       theme: CandyHubTheme.standard,
       home: BlocProvider(
         create: (context) => AuthBloc(FirebaseAuthProvider()),
-        child: const HomePage(),
+        child: const ProductScreen(),
       ),
     );
   }

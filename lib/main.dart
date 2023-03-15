@@ -17,6 +17,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'screens/screens.dart';
 import 'utilities/candyhub_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
@@ -27,6 +28,12 @@ Future<void> main() async {
   await Hive.openBox<ShoppingCart>('shoppingcart');
 
   WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  await Future.delayed(const Duration(milliseconds: 10));
+  FlutterNativeSplash.remove();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

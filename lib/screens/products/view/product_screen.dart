@@ -39,7 +39,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 children: [
                   const Icon(Icons.person, size: 40),
                   Text(
-                    "Abubakar Shaikh",
+                    "Hafsa Shaikh",
                     style: CandyHubTextStyle.heading4,
                   ),
                 ],

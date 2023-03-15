@@ -28,10 +28,6 @@ Future<void> main() async {
   await Hive.openBox<ShoppingCart>('shoppingcart');
 
   WidgetsFlutterBinding.ensureInitialized();
-  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-
-  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-
   await Future.delayed(const Duration(milliseconds: 10));
   FlutterNativeSplash.remove();
   await Firebase.initializeApp(
@@ -58,7 +54,7 @@ class App extends StatelessWidget {
       theme: CandyHubTheme.standard,
       home: BlocProvider(
         create: (context) => AuthBloc(FirebaseAuthProvider()),
-        child: const HomePage(),
+        child: const ProductScreen(),
       ),
     );
   }

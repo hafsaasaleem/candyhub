@@ -25,7 +25,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 0,
-        title: const Text("CandyHub"),
+        title: const Text("Towermarket"),
       ),
       drawer: Drawer(
         child: ListView(
